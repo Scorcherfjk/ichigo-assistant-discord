@@ -3,19 +3,20 @@ const Discord = require("discord.js");
 const config = require("./config");
 const DiscordController = require("./controllers/discord.controller");
 const discordController = new DiscordController();
+const logger = require("./services/logger.service");
 
 const client = new Discord.Client();
 client.login(config.token);
 
 client.on("ready", () => {
-  console.log(`Conected like ${client.user.tag}`);
+  logger.info({ label: client.user.username, message: `Conected like ${client.user.tag}`});
 });
 
 client.on("message", async (msg) => {
   if (msg.author.bot) return;
 
   if (msg.channel.type === 'dm') {
-  // if (msg.content.toLocaleLowerCase() === "hola") {
+    logger.info({ label: msg.author.username, level: 'DM Message', message: `Message received '${msg.content}'` })
     const { has_reaction, reaction, message } = await discordController.receive(
       msg
     );
@@ -24,6 +25,5 @@ client.on("message", async (msg) => {
       msg.react(reaction);
     }
     msg.reply(message);
-  // }
   }
 });
