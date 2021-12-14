@@ -16,7 +16,7 @@ client.on("message", async (msg) => {
   if (msg.author.bot) return;
 
   if (msg.channel.type === 'dm') {
-    logger.info({ label: msg.author.username, level: 'DM Message', message: `Message received '${msg.content}'` })
+    logger.info({ label: msg.author.username, message: `Message received '${msg.content}'` })
     const { has_reaction, reaction, message } = await discordController.receive(
       msg
     );
