@@ -1,0 +1,28 @@
+{
+  "name": "ishigo-assistant-discord",
+  "version": "1.0.0",
+  "description": "conexion a discord del asistente",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scorcherfjk/ishigo-assistant-discord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scorcherfjk/ishigo-assistant-discord/issues"
+  },
+  "homepage": "https://github.com/Scorcherfjk/ishigo-assistant-discord#readme",
+  "dependencies": {
+    "axios": "0.24.0",
+    "discord.js": "^12.3.1",
+    "dotenv": "10.0.0",
+    "winston": "3.3.3"
+  }
+}
