@@ -25,5 +25,6 @@ client.on("message", async (msg) => {
       msg.react(reaction);
     }
     msg.reply(message);
+    logger.info({ label: 'bot', message: `Message received '${msg.content}'` })
   }
 });
