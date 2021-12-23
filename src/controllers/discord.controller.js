@@ -20,9 +20,7 @@ class DiscordController {
 
   async receive(msg) {
     const payload = this.transformPayload(msg);
-    const data = await this.fetch.sendMessage(payload);
-
-    return data;
+    return this.fetch.sendMessage(payload);
   }
 }
 
